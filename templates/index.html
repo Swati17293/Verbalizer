@@ -25,8 +25,14 @@
   <!-- query input -->
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-7">{% include "input-query.html" %}</div>
-      <div class="col-sm-5">{% include "sample-query.html" %}</div>
+      <div class="col-sm-7">
+        {% include "input-query.html" %}
+      </div>
+      <div class="col-sm-5">
+        {% with %}
+          {% include "sample-query.html" %}
+        {% endwith %}
+      </div>
     </div>
   </div>
   <!-- query input -->
