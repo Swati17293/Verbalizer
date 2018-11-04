@@ -2,10 +2,13 @@ import psycopg2
 
 class SQLManager(object):
     def __init__(self):
+        with open('postgre-password.txt', 'r') as passwordFile:
+            password = passwordFile.read()
+
         conn = psycopg2.connect(
             database="rhylhlsw",
             user="rhylhlsw",
-            password="9al4oMxAkshZTpLQIrW4261P_cRX_Vur",
+            password=password,
             host="nutty-custard-apple.db.elephantsql.com",
             port="5432"
         )
