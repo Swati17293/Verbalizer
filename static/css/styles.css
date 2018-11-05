@@ -5,3 +5,12 @@
 footer div {
     text-align: center;
 } 
+div.form-group label {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+div.form-group .btn {
+    margin-top: 5px;
+    float: right;
+}
