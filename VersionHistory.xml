@@ -29,4 +29,7 @@
         - implemet SPARQLManager that sends queries to an endpoint and recieves json results
         - display query result on answer-query template
     </Version>
+    <Version ID="0.2.0.0" Date="2018-11-05">
+        - merge to master branch
+    </Version>
 </VersionHistory>
