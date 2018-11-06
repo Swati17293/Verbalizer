@@ -32,4 +32,11 @@
     <Version ID="0.2.0.0" Date="2018-11-05">
         - merge to master branch
     </Version>
+    <Version ID="0.2.1.0" Date="2018-11-06">
+        - fix sample queris list
+        - fix footer styles
+        - fix page styles
+        - add placeholder to input textarea
+        - fix merge conflicts 
+    </Version>
 </VersionHistory>

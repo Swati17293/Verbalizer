@@ -17,12 +17,9 @@ footer div {
     width: 100%;
     background-color: #007575;
     color: #b8cdcd;
-
+    padding-bottom: 6px!important;
+    padding-top: 6px!important;
 } 
-div.form-group label {
-    font-size: 1.25rem;
-    font-weight: 500;
-}
 
 div.form-group .btn {
     color: black;
