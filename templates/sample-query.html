@@ -1,22 +1,8 @@
-<!-- <h5>Sample queries:</h5> -->
-
-<!--<form>
-    <div class="form-group">
-        <label for="sample">Sample queries:</label>
-        <textarea class="form-control" cols="40" rows="10" id="sample"></textarea>
-        <ul>
-            {% for query in queries %}
-            <li>{{query}}</li>
-            {% endfor %}
-        </ul>
-    </div>
-</form>
--->
+<h5>Sample queries:</h5>
 <div class="list">
-    <label>Sample queries:</label>
     <ul class="list-group">
         {% for query in queries %}
-        <li class="sample-query">{{query}}</li>
+            <li class="sample-query">{{query}}</li>
         {% endfor %}
     </ul>
 </div>

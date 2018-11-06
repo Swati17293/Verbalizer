@@ -38,10 +38,6 @@ div.form-group .btn {
     -webkit-overflow-scrolling: touch;
     
 }
-div.list label {
-    font-size: 1.25rem;
-    font-weight: 500;
-}
 
 .list .list-group .sample-query {
     border-bottom: 1px solid black;
