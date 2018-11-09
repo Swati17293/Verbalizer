@@ -45,4 +45,12 @@
         - fix sample queries list styles
         - resolve merge conflicts 
     </Version>
+    <Version ID="0.2.3.0" Date="2018-11-09">
+        - add postrequest method on app.py for query, label and sample posts
+        - fix GetRandomLabels on SQLManager
+        - add GetSpecificQuery on SQLManager
+        - inplement post methods with ajax for getting specific query and random sample labels
+        - add shuffle button on sample query area
+        - add styles to answer area
+    </Version>
 </VersionHistory>

@@ -5,6 +5,7 @@ from models.LogManager import LogManager
 class SQLManager(object):
     queries = []
     labels = []
+    sampleQueriesNum = 10
     
     @staticmethod
     def init():
@@ -43,5 +44,9 @@ class SQLManager(object):
         return SQLManager.labels
     
     @staticmethod
-    def GetRandomLabels(num):
-        return random.sample(set(SQLManager.labels), num)
+    def GetRandomLabels():
+        return random.sample(set(SQLManager.labels), SQLManager.sampleQueriesNum)
+
+    @staticmethod
+    def GetSpecificQuery(label):
+        return dict(SQLManager.queries)[label]

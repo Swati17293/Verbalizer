@@ -21,7 +21,7 @@ footer div {
     padding-top: 6px!important;
 } 
 
-div.form-group .btn {
+div .btn {
     color: black;
     margin-top: 5px;
     float: right;
@@ -40,4 +40,11 @@ div.form-group .btn {
     border-bottom: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid black;
+}
+
+#answer {
+    min-height: 100px;
+    background-color: white;
+    border-radius: 20px;
+    margin-bottom: .5rem;
 }
