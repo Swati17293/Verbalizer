@@ -53,4 +53,7 @@
         - add shuffle button on sample query area
         - add styles to answer area
     </Version>
+    <Version ID="0.2.4.0" Date="2018-11-09">
+        - fix styles on footer and header title
+    </Version>
 </VersionHistory>

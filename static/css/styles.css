@@ -5,9 +5,15 @@
     padding-bottom: 1rem;
     padding-top: 1rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 5px;
 }
 body {
     background: #ebebeb
+}
+
+footer {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 footer div {
@@ -19,6 +25,7 @@ footer div {
     color: #b8cdcd;
     padding-bottom: 6px!important;
     padding-top: 6px!important;
+    border-radius: 5px;
 } 
 
 div .btn {
@@ -47,4 +54,5 @@ div .btn {
     background-color: white;
     border-radius: 20px;
     margin-bottom: .5rem;
+    padding: 20px;
 }
