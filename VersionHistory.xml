@@ -56,4 +56,7 @@
     <Version ID="0.2.4.0" Date="2018-11-09">
         - fix styles on footer and header title
     </Version>
+    <Version ID="0.3.0.0" Date="2018-11-09">
+        - merge with master branch
+    </Version>
 </VersionHistory>
