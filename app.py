@@ -18,7 +18,7 @@ SQLManager.init()
 
 @app.route('/')
 def index():
-    return render_template('index.html', queries=SQLManager.GetQueries(), version=XMLManager.GetLatestVersion())
+    return render_template('index.html', labels=SQLManager.GetRandomLabels(10), version=XMLManager.GetLatestVersion())
 
 @app.route('/', methods=['POST'])
 def query():

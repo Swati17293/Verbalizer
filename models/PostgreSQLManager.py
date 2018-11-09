@@ -1,8 +1,10 @@
 import psycopg2
+import random
 from models.LogManager import LogManager
 
 class SQLManager(object):
-    queries = None
+    queries = []
+    labels = []
     
     @staticmethod
     def init():
@@ -25,8 +27,9 @@ class SQLManager(object):
                     port="5432"
                 )
                 cur = conn.cursor()
-                cur.execute("SELECT query FROM public.sparql_queries;")
-                SQLManager.queries = [r[0] for r in cur.fetchall()]
+                cur.execute("SELECT label, query FROM public.qald_queries;")
+                SQLManager.queries = [r for r in cur.fetchall()]
+                SQLManager.labels = [query[0] for query in SQLManager.queries]
                 LogManager.LogInfo("Connected to database successfully!")
             except:
                 LogManager.LogError("Failed to connect to database")
@@ -34,3 +37,11 @@ class SQLManager(object):
     @staticmethod
     def GetQueries():
         return SQLManager.queries
+    
+    @staticmethod
+    def GetLabels():
+        return SQLManager.labels
+    
+    @staticmethod
+    def GetRandomLabels(num):
+        return random.sample(set(SQLManager.labels), num)
