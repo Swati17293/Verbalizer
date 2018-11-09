@@ -1,16 +1,43 @@
 .main-title {
     text-align: center;
+    color: whitesmoke;
+    background-color: #009090;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body {
+    background: #ebebeb
 }
 
 footer div {
     text-align: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #007575;
+    color: #b8cdcd;
+    padding-bottom: 6px!important;
+    padding-top: 6px!important;
 } 
-div.form-group label {
-    font-size: 1.25rem;
-    font-weight: 500;
-}
 
 div.form-group .btn {
+    color: black;
     margin-top: 5px;
     float: right;
+    background-color: #accf00;
+}
+
+.list .list-group{
+    max-height: 600px;
+    margin-bottom: 10px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+    
+}
+
+.list .list-group .sample-query {
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
