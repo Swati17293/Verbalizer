@@ -39,4 +39,10 @@
         - add placeholder to input textarea
         - fix merge conflicts 
     </Version>
+    <Version ID="0.2.2.0" Date="2018-11-09">
+        - add sample queries with labels on database 
+        - display random sample queries labels on main page
+        - fix sample queries list styles
+        - resolve merge conflicts 
+    </Version>
 </VersionHistory>
