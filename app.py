@@ -2,18 +2,18 @@ from flask import Flask, render_template, request, get_template_attribute
 from models.PostgreSQLManager import SQLManager
 from models.LogManager import LogManager
 from models.XMLManager import XMLManager
-from models.SPARQLManager import SPARQLManager
+from models.SPARQLEndpointManager import SPARQLEndpointManager
+from models.VerbalizeManager import VerbalizeManager
 import json
 
 LogManager.init()
 XMLManager.init()
-SPARQLManager.init()
+SPARQLEndpointManager.init("http://127.0.0.1:3030/solide/sparql")
+SQLManager.init("solide_queries", 10)
 
 LogManager.LogInfo('Starting Flask Application...') 
 
 app = Flask(__name__)
-
-SQLManager.init()
 
 @app.route('/')
 def index():
@@ -23,8 +23,8 @@ def index():
 def PostRequests():
     if 'query' in request.form :
         sparqlQuery = request.form['query']
-        answer = SPARQLManager.SendQuery(sparqlQuery)
-        return json.dumps(answer)
+        verbilizer = VerbalizeManager(sparqlQuery)
+        return str(verbilizer.answer)
     elif 'label' in request.form:
         label = request.form['label']
         queryLabel = SQLManager.GetSpecificQuery(label)

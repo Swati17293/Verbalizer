@@ -1,16 +1,17 @@
-import psycopg2
-import random
 from models.LogManager import LogManager
+import psycopg2, random
 
 class SQLManager(object):
     queries = []
     labels = []
-    sampleQueriesNum = 10
+    sampleQueriesNum = None
     
     @staticmethod
-    def init():
+    def init(table, sampleNumber):
         LogManager.LogInfo("Connecting to database...")
+        whereClause = "WHERE id IN (1,2,5,6,9,10,13,14,15,16,19,20,23,24,26,27,28,29,35,36,39,40,44,45,50,51,52,53,56,57,61)"
         password = None
+        SQLManager.sampleQueriesNum = sampleNumber
         try:
             LogManager.LogInfo("Getting password from file...")
             with open('postgre-password.txt', 'r') as passwordFile:
@@ -28,7 +29,7 @@ class SQLManager(object):
                     port="5432"
                 )
                 cur = conn.cursor()
-                cur.execute("SELECT label, query FROM public.qald_queries;")
+                cur.execute(f"SELECT label, query FROM public.{table} {whereClause};")
                 SQLManager.queries = [r for r in cur.fetchall()]
                 SQLManager.labels = [query[0] for query in SQLManager.queries]
                 LogManager.LogInfo("Connected to database successfully!")

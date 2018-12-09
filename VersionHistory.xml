@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<VersionHistory name="SPARQLANSWER2NL">
+<VersionHistory name="Verbalizer">
     <Version ID="0.1.0.0" Date="2018-11-01">
         - initial
         - implement base application with docker and flask
@@ -26,7 +26,7 @@
     <Version ID="0.1.6.0" Date="2018-11-05">
         - implemet requests with ajax and flask without loading whole page
         - add query method that recieves POST requests from ajax
-        - implemet SPARQLManager that sends queries to an endpoint and recieves json results
+        - implemet SPARQLEndpointManager that sends queries to an endpoint and recieves json results
         - display query result on answer-query template
     </Version>
     <Version ID="0.2.0.0" Date="2018-11-05">
@@ -58,5 +58,13 @@
     </Version>
     <Version ID="0.3.0.0" Date="2018-11-09">
         - merge with master branch
+    </Version>
+    <Version ID="0.4.0.0" Date="2018-12-09">
+        - add DictCCManager for contacting dict.cc
+        - add SPARQLParserManager for parsing query and extracting important information
+        - add SplitTextManager for spliting text without spaces e.g. predicates or compound words
+        - add VerbalizeManager to verbalize the answer of query (only for objects queries for now)
+        - add word dictionary for the ontology (helping to split predicates)
+        - use ngrams_probs model for predicting compound words
     </Version>
 </VersionHistory>
