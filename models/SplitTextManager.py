@@ -134,7 +134,4 @@ class CharSplit(object):
     @classmethod
     def SplitCompoundWord(cls, word):
         splitAnswer = cls.split_compound(word)
-        if splitAnswer[0] < 0.5:
-            return word
-        else:
-            return splitAnswer[1:]
+        return word if splitAnswer[0] < 0.5 else splitAnswer[1:]

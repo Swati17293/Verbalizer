@@ -16,13 +16,14 @@ class SPARQLParserManager(object):
         
     
     def ParseQuery(self, query):
-        LogManager.LogInfo("Parsing SPARQL query...")
+        LogManager.LogInfo(f"Parsing SPARQL query...")
         self.queryIsValid = self.ValidateQuery(query)
+        self.serverAnswer = SPARQLEndpointManager.SendQuery(query)
+        if self.serverAnswer is None: self.queryIsValid = False
         if self.queryIsValid: 
             self.queryPrefixes = self.GetQueryPrefixes(query)
             self.queryTriples = self.GetQueryTriples(query)
             if self.queryIsValid:
-                self.serverAnswer = SPARQLEndpointManager.SendQuery(query)
                 self.queryVariable = self.GetQueryVariables()
                 if len(self.queryVariable) == 1:
                     self.queryAnswer = self.GetQueryAnswers()
@@ -31,9 +32,9 @@ class SPARQLParserManager(object):
                         self.queryError = f"Die Abfrage hat keine Antwort."
                 else:
                     self.queryIsValid = False
-                    self.queryError = f"Sie können nur eine Variable abfragen. {self.queryVariable}"
+                    self.queryError = f"Sie können nur eine Variable abfragen. {self.queryVariable}\nAbfragen Antwort: {self.serverAnswer}"
         else:
-            self.queryError = "Ungültige Abfragesyntax. Wir unterstützen nur Abfragen vom Typ 'SELECT'."
+            self.queryError = f"Ungültige Abfragesyntax. Wir unterstützen nur Abfragen vom Typ 'SELECT'."
         
 
     def ValidateQuery(self, query):
@@ -48,23 +49,23 @@ class SPARQLParserManager(object):
             return False
     
     def GetQueryVariables(self):
-        LogManager.LogInfo("Extracting query variable from endpoint answer...")
+        LogManager.LogInfo(f"Extracting query variable from endpoint answer...")
         return self.serverAnswer["head"]["vars"]
     
     def GetQueryAnswers(self):
-        LogManager.LogInfo("Getting query answer from endpoint...")
+        LogManager.LogInfo(f"Getting query answer from endpoint...")
         answers = []
         for result in self.serverAnswer["results"]["bindings"]:
             answers.append(result[self.queryVariable[0]]["value"])
         
         if len(answers) == 0:
-            LogManager.LogInfo("No answer from endpoint")
+            LogManager.LogInfo(f"No answer from endpoint")
             return None
         
         return answers
     
     def GetQueryTriples(self, query):
-        LogManager.LogInfo("Extracting triples from query...")
+        LogManager.LogInfo(f"Extracting triples from query...")
         triples = []
         inlineQuery = query.replace('\n', ' ').replace('\t', '')
         allTriples = inlineQuery[inlineQuery.find("{")+1:inlineQuery.find("}")]
@@ -84,7 +85,7 @@ class SPARQLParserManager(object):
             if i != 0:
                 i = (i * 3) - 1
                 sub = nTriples[i-2]
-                pred = nTriples[i-1].rsplit('/', 1)[-1].lstrip('<').rstrip('>')
+                pred = nTriples[i-1]
                 obj = nTriples[i]
                 triples.append((sub, pred, obj))
 
@@ -92,14 +93,14 @@ class SPARQLParserManager(object):
         return triples
     
     def GetQueryPrefixes(self, query):
-        LogManager.LogInfo("Extracting prefixes from query...")
+        LogManager.LogInfo(f"Extracting prefixes from query...")
         prefixes = []
         inlineQuery = query.replace('\n', ' ').replace('\t', '')
         queryRegex = r'(.*)[Ss][Ee][Ll][Ee][Cc][Tt](.*)'
         matchPrefixes = re.match(queryRegex, inlineQuery)
 
         if not matchPrefixes:
-            LogManager.LogInfo("No prefixes found")
+            LogManager.LogInfo(f"No prefixes found")
             return None
 
         allPrefixes = matchPrefixes.group(1)

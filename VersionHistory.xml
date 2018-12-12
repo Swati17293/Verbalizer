@@ -67,4 +67,10 @@
         - add word dictionary for the ontology (helping to split predicates)
         - use ngrams_probs model for predicting compound words
     </Version>
+    <Version ID="0.5.0.0" Date="2018-12-12">
+        - delete PostgreSQLManager
+        - read queries from xml file, extent XMLManager to read queries and labels
+        - implemet mathods to query type and label on SPARQLEndpointManager
+        - refactor part of code on whole app
+    </Version>
 </VersionHistory>

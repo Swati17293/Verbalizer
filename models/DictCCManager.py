@@ -16,7 +16,7 @@ class Dict(object):
     @classmethod
     def GetResponse(cls, word, from_language, to_language):
         subdomain = from_language.lower()+to_language.lower()
-        url = "https://"+subdomain+".dict.cc/?s=" + quote_plus(word.encode("utf-8"))
+        url = f"https://{subdomain}.dict.cc/?s={quote_plus(word.encode('utf-8'))}"
         req = urllib2.Request(
             url,
             None,
@@ -43,7 +43,7 @@ class Dict(object):
             return ['', '']
 
     @classmethod
-    def CheckPredicates(cls, predicates, isVerbInfiniteForm=False, isNounPlural=False):
+    def CheckPredicates(cls, predicates, isVerbInfiniteForm=False, isNounPlural=False, isAccusative=False):
         newPredicates = []
         countVerb = 0
         countNoun = 0
@@ -56,10 +56,11 @@ class Dict(object):
             elif dictAnswer[0] == 'noun':
                 dictNoun = dictAnswer[1][0][1].text.strip() if isNounPlural else dictAnswer[1][0][0].text
                 dictNoun = re.sub(r'\[.*\]', '', dictNoun).strip()
+                dictNoun = dictNoun.replace('der', 'den') if 'der' in dictNoun and isAccusative else dictNoun
                 newPredicates.append(dictNoun)
                 countNoun += 1
             else:
-                newPredicates.append(cls.CheckCompoundWords(pred, isNounPlural))
+                newPredicates.append(cls.CheckCompoundWords(pred, isNounPlural, isAccusative))
         
         if countVerb == 0:
             predVerb = 'haben' if isVerbInfiniteForm else 'hat'
@@ -79,22 +80,21 @@ class Dict(object):
     
 
     @classmethod
-    def CheckCompoundWords(cls, word, isPlural=True):
-        if any(x in word for x in ['der', 'die', 'das']):
-            return word
+    def CheckCompoundWords(cls, word, isPlural=False, isAccusative=False):
+        if any(x in word for x in ['der', 'die', 'das']): return word if not 'der' in word and isAccusative else word.replace('der', 'den')
         
         stemWords = CharSplit.SplitCompoundWord(word)
-        if len(stemWords) != 2:
-            return word
+        if not isinstance(stemWords, list): return word
+        
+        if len(stemWords) != 2: return word
             
         dictAnswer = cls.Check(stemWords[1])
-        if dictAnswer[0] != 'noun':
-            return word
+        if dictAnswer[0] != 'noun': return word
 
         dictNoun = dictAnswer[1][0][1].text.strip() if isPlural else dictAnswer[1][0][0].text
         dictNoun = re.sub(r'\[.*\]', '', dictNoun).strip()
-        if not any(x in dictNoun for x in ['der', 'die', 'das']):
-            return word
+        if not any(x in dictNoun for x in ['der', 'die', 'das']): return word
 
         article, noun = dictNoun.split(' ', 1)
+        article = 'den' if article == 'der' and isAccusative else article
         return article + ' ' + stemWords[0].title() + noun.lower()
