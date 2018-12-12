@@ -1,0 +1,8 @@
+.DS_Store
+launch.json
+settings.json
+__pycache__/
+models/__pycache__/
+logs.txt
+models/ngram/__pycache__/
+models/ngram/ngram_probs.py

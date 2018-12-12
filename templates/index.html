@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+  <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+  <title>Verbalizer</title>
+
+</head>
+
+<body>
+
+  <!-- title -->
+  <div class="container-fluid">
+      <h2 class="main-title">Verbalization of SPARQL queries answers</h2>
+  </div> 
+  <!-- title -->
+
+  <!-- query input -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-7">
+        {% include "input-query.html" %}
+      </div>
+      <div class="col-sm-5">
+        {% with %}
+          {% include "sample-query.html" %}
+        {% endwith %}
+      </div>
+    </div>
+  </div>
+  <!-- query input -->
+
+  <!-- query answer -->
+  <div class="container-fluid">{% include "answer-query.html" %}</div>
+  <!-- query answer -->
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container-fluid"><span>&copy; Copyright 2018: Verbalizer - Version {{version}}</span></div>
+  </footer>
+  <!-- Footer -->
+</body>
+</html>

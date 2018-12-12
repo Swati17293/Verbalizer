@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VersionHistory name="Verbalizer">
+    <Version ID="0.1.0.0" Date="2018-11-01">
+        - initial
+        - implement base application with docker and flask
+        - add templates and static files 
+    </Version>
+    <Version ID="0.1.1.0" Date="2018-11-04">
+        - implement stable connection to postgre server
+        - display all queries on sample-query file 
+    </Version>
+    <Version ID="0.1.2.0" Date="2018-11-04">
+        - add password file for connecting to postgre
+    </Version>
+    <Version ID="0.1.3.0" Date="2018-11-05">
+        - implement input query textarea and submit button
+    </Version>
+    <Version ID="0.1.4.0" Date="2018-11-05">
+        - add static class log manager for logging application in file
+        - make sql manager a static class with static methods
+    </Version>
+    <Version ID="0.1.5.0" Date="2018-11-05">
+        - add version history xml file for tracking version and application changes
+        - display latest version at footer of page
+    </Version>
+    <Version ID="0.1.6.0" Date="2018-11-05">
+        - implemet requests with ajax and flask without loading whole page
+        - add query method that recieves POST requests from ajax
+        - implemet SPARQLEndpointManager that sends queries to an endpoint and recieves json results
+        - display query result on answer-query template
+    </Version>
+    <Version ID="0.2.0.0" Date="2018-11-05">
+        - merge to master branch
+    </Version>
+    <Version ID="0.2.1.0" Date="2018-11-06">
+        - fix sample queris list
+        - fix footer styles
+        - fix page styles
+        - add placeholder to input textarea
+        - fix merge conflicts 
+    </Version>
+    <Version ID="0.2.2.0" Date="2018-11-09">
+        - add sample queries with labels on database 
+        - display random sample queries labels on main page
+        - fix sample queries list styles
+        - resolve merge conflicts 
+    </Version>
+    <Version ID="0.2.3.0" Date="2018-11-09">
+        - add postrequest method on app.py for query, label and sample posts
+        - fix GetRandomLabels on SQLManager
+        - add GetSpecificQuery on SQLManager
+        - inplement post methods with ajax for getting specific query and random sample labels
+        - add shuffle button on sample query area
+        - add styles to answer area
+    </Version>
+    <Version ID="0.2.4.0" Date="2018-11-09">
+        - fix styles on footer and header title
+    </Version>
+    <Version ID="0.3.0.0" Date="2018-11-09">
+        - merge with master branch
+    </Version>
+    <Version ID="0.4.0.0" Date="2018-12-09">
+        - add DictCCManager for contacting dict.cc
+        - add SPARQLParserManager for parsing query and extracting important information
+        - add SplitTextManager for spliting text without spaces e.g. predicates or compound words
+        - add VerbalizeManager to verbalize the answer of query (only for objects queries for now)
+        - add word dictionary for the ontology (helping to split predicates)
+        - use ngrams_probs model for predicting compound words
+    </Version>
+    <Version ID="0.5.0.0" Date="2018-12-12">
+        - delete PostgreSQLManager
+        - read queries from xml file, extent XMLManager to read queries and labels
+        - implemet mathods to query type and label on SPARQLEndpointManager
+        - refactor part of code on whole app
+    </Version>
+</VersionHistory>
