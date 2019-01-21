@@ -29,10 +29,10 @@ class SPARQLEndpointManager(object):
             return None
     
     @staticmethod
-    def SendQueryForLabel(variable, prefixes='', returnFormat=JSON):
+    def SendQueryForLabel(variable, prefixes='', predicateLabel='<http://www.w3.org/2000/01/rdf-schema#label>', returnFormat=JSON):
         LogManager.LogInfo(f"Sending query to endpoint {SPARQLEndpointManager.endpoint} for getting label of {variable}")
         stringPrefixes = [pref[1] for pref in prefixes] if prefixes != '' else ['']
-        query = ' '.join(stringPrefixes) + ' SELECT ?label WHERE { ' + variable + ' <http://www.w3.org/2000/01/rdf-schema#label> ' + '?label . }'
+        query = ' '.join(stringPrefixes) + ' SELECT ?label WHERE { ' + variable + f' {predicateLabel} ' + '?label . }'
         try:
             SPARQLEndpointManager.sparql.setQuery(query)
             SPARQLEndpointManager.sparql.setReturnFormat(returnFormat)

@@ -73,4 +73,13 @@
         - implemet mathods to query type and label on SPARQLEndpointManager
         - refactor part of code on whole app
     </Version>
+    <Version ID="0.6.0.0" Date="2018-01-21">
+        - create Common class and add all common functions through the project
+        - create VerbalizeTripleObject class that verbalizes objects of triples
+        - creat VerbalizeTripleSubject class that verbalizes subjects of triples
+        - split and refactor verbalize manager
+    </Version>
+    <Version ID="0.9.0.0" Date="2018-01-21">
+        - Final Release
+    </Version>
 </VersionHistory>

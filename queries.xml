@@ -3,8 +3,8 @@
     <!-- Queries for objects -->
     <question>
         <label>Wer ist der Leiter von den Einsatzabschnitt "EA 2"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?leiter
 WHERE {
@@ -12,12 +12,13 @@ WHERE {
   ?x rdfs:label "EA 2" .
   ?x ont:hatLeiter ?leiter . 
 }
+        ]]>
         </query>
     </question>
     <question>
         <label>Wer ist der Leiter von den Einsatzabschnitt "Reserve"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?leiter
 WHERE {
@@ -25,12 +26,14 @@ WHERE {
   ?x rdfs:label "Reserve" .
   ?x ont:hatLeiter ?leiter . 
 }
+
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist die Beschreibung von den Einsatzabschnitt "Reserve"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?beschreibung
 WHERE {
@@ -38,12 +41,14 @@ WHERE {
   ?x rdfs:label "Reserve" .
   ?x ont:beschreibung_FH ?beschreibung .
 }
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist die Beschreibung von den Einsatzabschnitt "EA 1"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?beschreibung
 WHERE {
@@ -51,12 +56,14 @@ WHERE {
   ?x rdfs:label "EA 1" .
   ?x ont:beschreibung_FH ?beschreibung .
 }
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist das Datum von den Einsatzabschnitt "TEL"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?date
 WHERE {
@@ -64,12 +71,14 @@ WHERE {
   ?x rdfs:label "TEL" .
   ?x ont:datumzeit ?date .
 } 
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist das Datum von den Einsatzabschnitt "Einsatzleitung"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?date
 WHERE {
@@ -77,12 +86,14 @@ WHERE {
   ?x rdfs:label "Einsatzleitung" .
   ?x ont:datumzeit ?date .
 } 
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist der Einsatzort von den Einsatzabschnitt "EA 4"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?ort
 WHERE {
@@ -90,12 +101,14 @@ WHERE {
   ?x rdfs:label "EA 4" .
   ?x ont:hatEinsatzort ?ort .
 } 
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist der Einsatzort von den Einsatzabschnitt "EA2 - UAE 4"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?ort
 WHERE {
@@ -103,12 +116,14 @@ WHERE {
   ?x rdfs:label "EA2 - UAE 4" .
   ?x ont:hatEinsatzort ?ort .
 } 
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist der Oberabschnitt von den Einsatzabschnitt "3. Zug"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?abschnitt
 WHERE {
@@ -116,12 +131,14 @@ WHERE {
   ?x rdfs:label "3. Zug" .
   ?x ont:hatOberabschnitt ?abschnitt .
 } 
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist der Oberabschnitt von den Einsatzabschnitt "Einsatzbegl. Presse"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?abschnitt
 WHERE {
@@ -129,12 +146,14 @@ WHERE {
   ?x rdfs:label "Einsatzbegl. Presse" .
   ?x ont:hatOberabschnitt ?abschnitt .
 }
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist der Kommentar von den Einsatzabschnitt "EA 1"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?comment
 WHERE {
@@ -142,12 +161,14 @@ WHERE {
   ?x rdfs:label "EA 1" .
   ?x ont:kommentar_FH ?comment .
 } 
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist der Kommentar von den Einsatzabschnitt "EA 3"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?comment
 WHERE {
@@ -155,12 +176,14 @@ WHERE {
   ?x rdfs:label "EA 3" .
   ?x ont:kommentar_FH ?comment .
 } 
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist der Auftrag von den Einsatzabschnitt "EA 1 - UEA 2"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?auftrag
 WHERE {
@@ -168,12 +191,14 @@ WHERE {
   ?x rdfs:label "EA 1- UAE 2" .
   ?x ont:hatAuftrag ?auftrag .
 } 
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist der Auftrag von den Einsatzabschnitt "EA 2"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?auftrag
 WHERE {
@@ -181,36 +206,42 @@ WHERE {
   ?x rdfs:label "EA 2" .
   ?x ont:hatAuftrag ?auftrag .
 } 
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist der PA Traeger von der Einsatzkraft "Bundespolizei"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX res: &lt;http://solide-projekt.de/resource/&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
 
 SELECT ?anzahl
 WHERE { 
     res:Bundespolizei a ont:Einsatzkraft .
     res:Bundespolizei ont:patraeger ?anzahl . 
 }
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist der PA Traeger von der Einsatzkraft "KFB-Umwelt-2-Zug"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX res: &lt;http://solide-projekt.de/resource/&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
 
 SELECT ?anzahl
 WHERE { 
     res:KFB-Umwelt-2-Zug a ont:Einsatzkraft .
     res:KFB-Umwelt-2-Zug ont:patraeger ?anzahl . 
 }
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist der Status von der Einsatzkraft "BTW"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?status
 WHERE { 
@@ -218,12 +249,14 @@ WHERE {
     ?x ont:takteinheit "BTW " . 
     ?x ont:hatStatus ?status
 }
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist der Status von der Einsatzkraft "TEL LK Nienburg / Weser"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX res: &lt;http://solide-projekt.de/resource/&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
 
 SELECT ?status
 WHERE { 
@@ -231,155 +264,181 @@ WHERE {
     ?x ont:takteinheit "TEL LK Nienburg / Weser" . 
     ?x ont:hatStatus ?status
 }
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist der Einsatzort von der Einsatzkraft "Fw-Vechta"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX res: &lt;http://solide-projekt.de/resource/&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
 
 SELECT DISTINCT ?ort
 WHERE { 
     res:Fw-Vechta a ont:Einsatzkraft .
     res:Fw-Vechta ont:hatEinsatzort ?ort .
 }
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist der Einsatzort von der Einsatzkraft "TMF-FF-Lahde"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX res: &lt;http://solide-projekt.de/resource/&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
 
 SELECT DISTINCT ?ort
 WHERE { 
     res:TMF-FF-Lahde a ont:Einsatzkraft .
     res:TMF-FF-Lahde ont:hatEinsatzort ?ort .
 }
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist der Einsatzabschnitt von der Einsatzkraft "Fw-Schierbrok"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX res: &lt;http://solide-projekt.de/resource/&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
 
 SELECT DISTINCT ?abschnitt
 WHERE { 
     res:Fw-Schierbrok a ont:Einsatzkraft .
     res:Fw-Schierbrok ont:hatEinsatzabschnitt ?abschnitt .
 }
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist der Einsatzabschnitt von der Einsatzkraft "SEG-JUH-Oldenburger-Land"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX res: &lt;http://solide-projekt.de/resource/&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
 
 SELECT DISTINCT ?abschnitt
 WHERE { 
     res:SEG-JUH-Oldenburger-Land a ont:Einsatzkraft .
     res:SEG-JUH-Oldenburger-Land ont:hatEinsatzabschnitt ?abschnitt .
 }
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist den Funkbos von der Einsatzkraft "MTW-Estorf"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX res: &lt;http://solide-projekt.de/resource/&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
 
 SELECT DISTINCT ?funkbos
 WHERE { 
     res:MTW-Estorf a ont:Einsatzkraft .
     res:MTW-Estorf ont:funkbos ?funkbos .
 }
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist den Funkbos von der Einsatzkraft "Landespolizei"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX res: &lt;http://solide-projekt.de/resource/&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
 
 SELECT DISTINCT ?funkbos
 WHERE { 
     res:Landespolizei a ont:Einsatzkraft .
     res:Landespolizei ont:funkbos ?funkbos .
 }
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist den Typ von der Einsatzkraft "GW-Z-Flo-Ni-12-51-2"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX res: &lt;http://solide-projekt.de/resource/&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
 
 SELECT DISTINCT ?typ
 WHERE { 
     res:GW-Z-Flo-Ni-12-51-2 a ont:Einsatzkraft .
     res:GW-Z-Flo-Ni-12-51-2 ont:typ ?typ .
 }
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Was ist den Typ von der Einsatzkraft "ELW-1-Flo-Ni-24-11-18"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX res: &lt;http://solide-projekt.de/resource/&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
 
 SELECT DISTINCT ?typ
 WHERE { 
     res:ELW-1-Flo-Ni-24-11-18 a ont:Einsatzkraft .
     res:ELW-1-Flo-Ni-24-11-18 ont:typ ?typ .
 }
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Wie lautet die Telefonnummer von "Polizei"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?telefon
 WHERE { 
     ?x rdfs:label "Polizei" .
     ?x ont:telefon ?telefon .
 }
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Wie lautet die Telefonnummer von "POK Friese"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?telefon
 WHERE { 
     ?x rdfs:label "POK Friese" .
     ?x ont:telefon ?telefon .
 }
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Welche TMO-4M hat "Andreas Haake"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?tmo
 WHERE { 
     ?x rdfs:label "Andreas Haake" .
     ?x ont:TMO_4M ?tmo .
 }
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Welche TMO-4M hat "TEL Diepholz"?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
-PREFIX rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?tmo
 WHERE { 
     ?x rdfs:label "TEL Diepholz" .
     ?x ont:TMO_4M ?tmo .
 }
+        
+        ]]>
         </query>
     </question>
     <question>
         <label>Gib mir die letzte Nachricht?</label>
-        <query>PREFIX ont: &lt;http://solide-projekt.de/ontology/&gt;
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
 
 SELECT ?message 
 WHERE { 
@@ -388,7 +447,269 @@ WHERE {
   ?x ont:meldung ?message . 
 } 
 ORDER BY DESC (?timestamp) LIMIT 1
+        
+        ]]>
         </query>
+    </question>
+    <!-- End Queries for objects -->
+
+    <!-- Queries for subjects -->
+    <question>
+        <label>Welche Einsatzabschnitte haben den Leiter "PHK Lucht"?</label>
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?x
+WHERE {
+  ?x a ont:Einsatzabschnitt .
+  ?x ont:hatLeiter ?leiter .
+  ?leiter rdfs:label "PHK Lucht" .
+}
+        ]]>
+        </query>
+    </question>
+    <question>
+        <label>Welche Einsatzabschnitte haben den Leiter "TEL Wesermarsch"?</label>
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?x
+WHERE {
+  ?x a ont:Einsatzabschnitt .
+  ?x ont:hatLeiter ?leiter .
+  ?leiter rdfs:label "TEL Wesermarsch" .
+}
+        ]]>
+        </query>
+    </question>
+    <question>
+        <label>Welche Einsatzabschnitte haben den Einsatzort "Einsatzabschnitt 2"?</label>
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?x
+WHERE {
+  ?x a ont:Einsatzabschnitt .
+  ?x ont:hatEinsatzort "Einsatzabschnitt 2" .
+} 
+
+]]></query>
+    </question>
+    <question>
+        <label>Welche Einsatzabschnitte haben den Einsatzort "Bereitstellungsraum 1"?</label>
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?x
+WHERE {
+  ?x a ont:Einsatzabschnitt .
+  ?x ont:hatEinsatzort "Bereitstellungsraum 1" .
+} 
+
+]]></query>
+    </question>
+    <question>
+        <label>Welche Einsatzabschnitte haben den Oberabschnitt "EA 3"?</label>
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?x
+WHERE {
+  ?x a ont:Einsatzabschnitt .
+  ?x ont:hatOberabschnitt ?abschnitt .
+  ?abschnitt rdfs:label "EA 3" .
+} 
+
+]]></query>
+    </question>
+    <question>
+        <label>Welche Einsatzabschnitte haben den Oberabschnitt "Stab Delmenhorst"?</label>
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?x
+WHERE {
+  ?x a ont:Einsatzabschnitt .
+  ?x ont:hatOberabschnitt ?abschnitt .
+  ?abschnitt rdfs:label "Stab Delmenhorst" .
+} 
+
+]]></query>
+    </question>
+    <question>
+        <label>Welche Einsatzabschnitte haben den Auftrag "Deichsicherung"?</label>
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?x
+WHERE {
+  ?x a ont:Einsatzabschnitt .
+  ?x ont:hatAuftrag "Deichsicherung" .
+} 
+
+]]></query>
+    </question>
+    <question>
+        <label>Welche Einsatzabschnitte haben den Auftrag "Evakuirung"?</label>
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?x
+WHERE {
+  ?x a ont:Einsatzabschnitt .
+  ?x ont:hatAuftrag "Evakuirung" .
+} 
+
+]]></query>
+    </question>
+    <question>
+        <label>Welche Einsatzkräfte haben den Status "1.0"?</label>
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
+
+SELECT DISTINCT ?x
+WHERE { 
+    ?x a ont:Einsatzkraft .
+    ?x ont:hatStatus "1.0" .
+} 
+
+]]></query>
+    </question>
+    <question>
+        <label>Welche Einsatzkräfte haben den Einsatzort "TEL"?</label>
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?x
+WHERE { 
+    ?x a ont:Einsatzkraft .
+    ?x ont:hatEinsatzort ?ort  .
+    ?ort rdfs:label "TEL" .
+} 
+
+]]></query>
+    </question>
+    <question>
+        <label>Welche Einsatzkräfte haben den Einsatzort "Erstbetreuung"?</label>
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?x
+WHERE { 
+    ?x a ont:Einsatzkraft .
+    ?x ont:hatEinsatzort ?ort  .
+    ?ort rdfs:label "Erstbetreuung" .
+}  
+
+]]></query>
+    </question>
+    <question>
+        <label>Welche Einsatzkräfte haben den Einsatzabschnitt "4. Zug"?</label>
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?x
+WHERE { 
+    ?x a ont:Einsatzkraft .
+    ?x ont:hatEinsatzabschnitt ?abschnitt .
+    ?abschnitt rdfs:label "4. Zug" .
+} 
+
+]]></query>
+    </question>
+    <question>
+        <label>Welche Einsatzkräfte haben den Einsatzabschnitt "EA 3"?</label>
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?x
+WHERE { 
+    ?x a ont:Einsatzkraft .
+    ?x ont:hatEinsatzabschnitt ?abschnitt .
+    ?abschnitt rdfs:label "EA 3" .
+} 
+
+]]></query>
+    </question>
+    <question>
+        <label>Welche Einsatzkräfte haben den funkbos "Florian Vechta 80-05-01"?</label>
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
+
+SELECT DISTINCT ?x
+WHERE { 
+    ?x a ont:Einsatzkraft .
+    ?x ont:funkbos "Florian Vechta 80-05-01" .
+} 
+
+]]></query>
+    </question>
+    <question>
+        <label>Welche Einsatzkräfte haben den Funkbos "Sama Ni 66-85-1"?</label>
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
+
+SELECT DISTINCT ?x
+WHERE { 
+    ?x a ont:Einsatzkraft .
+    ?x ont:funkbos "Sama Ni 66-85-1" .
+} 
+
+]]></query>
+    </question>
+    <question>
+        <label>Welche Einsatzkräfte haben den Typ "elw"?</label>
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
+
+SELECT DISTINCT ?x
+WHERE { 
+    ?x a ont:Einsatzkraft .
+    ?x ont:typ ont:elw .
+} 
+
+]]></query>
+    </question>
+    <question>
+        <label>Welche Einsatzkräfte haben den Typ "tw"?</label>
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
+
+SELECT DISTINCT ?x
+WHERE { 
+    ?x a ont:Einsatzkraft .
+    ?x ont:typ ont:tw .
+} 
+
+]]></query>
+    </question>
+    <question>
+        <label>Wer hat den TMO-4M "Wieland 22/22"?</label>
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
+
+SELECT DISTINCT ?x
+WHERE { 
+    ?x ont:TMO_4M "Wieland 22/22" .
+} 
+
+]]></query>
+    </question>
+    <question>
+        <label>Wer hat den TMO-4M "TBZ_056_Uni"?</label>
+        <query><![CDATA[PREFIX ont: <http://solide-projekt.de/ontology/>
+PREFIX res: <http://solide-projekt.de/resource/>
+
+SELECT DISTINCT ?x
+WHERE { 
+    ?x ont:TMO_4M "TBZ_056_Uni" .
+} 
+
+]]></query>
     </question>
     <!-- End Queries for objects -->
 </solide>

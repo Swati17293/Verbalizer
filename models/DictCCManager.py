@@ -2,6 +2,7 @@ import urllib.request as urllib2
 from urllib.parse import quote_plus
 from bs4 import BeautifulSoup
 from models.SplitTextManager import CharSplit
+from models.Common import Common
 import re
 
 # Unoficial dict.cc client
@@ -54,7 +55,16 @@ class Dict(object):
                 newPredicates.append(dictVerb) 
                 countVerb += 1
             elif dictAnswer[0] == 'noun':
-                dictNoun = dictAnswer[1][0][1].text.strip() if isNounPlural else dictAnswer[1][0][0].text
+                dictNoun = None
+                if len(dictAnswer[1]) > 1:
+                    for answer in dictAnswer[1]:
+                        if dictNoun is None:
+                            dictNoun = answer
+                        elif not dictNoun[0].text.startswith('der') and answer[0].text.startswith('der'):
+                            dictNoun = answer
+                    dictNoun = dictNoun[1].text.strip() if isNounPlural else dictNoun[0].text
+                else:
+                    dictNoun = dictAnswer[1][0][1].text.strip() if isNounPlural else dictAnswer[1][0][0].text
                 dictNoun = re.sub(r'\[.*\]', '', dictNoun).strip()
                 dictNoun = dictNoun.replace('der', 'den') if 'der' in dictNoun and isAccusative else dictNoun
                 newPredicates.append(dictNoun)
@@ -81,7 +91,7 @@ class Dict(object):
 
     @classmethod
     def CheckCompoundWords(cls, word, isPlural=False, isAccusative=False):
-        if any(x in word for x in ['der', 'die', 'das']): return word if not 'der' in word and isAccusative else word.replace('der', 'den')
+        if any(x in word for x in Common.germanArticles): return word if not 'der' in word and isAccusative else word.replace('der', 'den')
         
         stemWords = CharSplit.SplitCompoundWord(word)
         if not isinstance(stemWords, list): return word
@@ -93,7 +103,7 @@ class Dict(object):
 
         dictNoun = dictAnswer[1][0][1].text.strip() if isPlural else dictAnswer[1][0][0].text
         dictNoun = re.sub(r'\[.*\]', '', dictNoun).strip()
-        if not any(x in dictNoun for x in ['der', 'die', 'das']): return word
+        if not any(x in dictNoun for x in Common.germanArticles): return word
 
         article, noun = dictNoun.split(' ', 1)
         article = 'den' if article == 'der' and isAccusative else article

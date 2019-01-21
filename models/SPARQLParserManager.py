@@ -34,7 +34,7 @@ class SPARQLParserManager(object):
                     self.queryIsValid = False
                     self.queryError = f"Sie können nur eine Variable abfragen. {self.queryVariable}\nAbfragen Antwort: {self.serverAnswer}"
         else:
-            self.queryError = f"Ungültige Abfragesyntax. Wir unterstützen nur Abfragen vom Typ 'SELECT'."
+            self.queryError = f"Ungültige Abfragesyntax."
         
 
     def ValidateQuery(self, query):
